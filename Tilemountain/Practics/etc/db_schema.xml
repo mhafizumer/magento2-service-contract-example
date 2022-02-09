@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="practics_new" onCreate="migrateDataFromAnotherTable(practics)"  resource="default" engine="innodb" comment="Practics Table">
+            <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+            <column xsi:type="int" name="category_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Category Id"/>
+            <column xsi:type="text" name="category_name" nullable="true" comment="Category Name"/>
+            <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Product Id"/>
+            <column xsi:type="varchar" name="product_name" nullable="true" length="255" comment="Product Name"/>
+            <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false"
+                    default="0" comment="Store ID"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Request create date"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Request Updated At"/>
+            <constraint xsi:type="primary" referenceId="PRIMARY">
+                <column name="entity_id"/>
+                <column name="category_id"/>
+                <column name="product_id"/>
+                <column name="store_id"/>
+            </constraint>
+            <constraint xsi:type="foreign" referenceId="CAT_CTGR_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID" table="practics"
+                        column="product_id" referenceTable="catalog_product_entity" referenceColumn="entity_id"
+                        onDelete="CASCADE"/>
+            <constraint xsi:type="foreign" referenceId="CAT_CTGR_PRD_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID"
+                        table="practics" column="category_id" referenceTable="catalog_category_entity"
+                        referenceColumn="entity_id" onDelete="CASCADE"/>
+            <constraint xsi:type="foreign" referenceId="CATALOG_CATEGORY_ENTITY_INT_STORE_ID_STORE_STORE_ID"
+                        table="practics" column="store_id" referenceTable="store"
+                        referenceColumn="store_id" onDelete="CASCADE"/>
+            <constraint xsi:type="unique" referenceId="CATALOG_CATEGORY_PRODUCT_CATEGORY_ID_PRODUCT_ID">
+                <column name="category_id"/>
+                <column name="product_id"/>
+                <column name="store_id"/>
+            </constraint>
+    </table>
+</schema>
+
+<!--remove column-->
+<!--    disabled="true"-->

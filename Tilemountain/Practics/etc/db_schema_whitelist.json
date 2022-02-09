@@ -1,0 +1,40 @@
+{
+    "practics": {
+        "column": {
+            "entity_id": true,
+            "category_id": true,
+            "category_name": true,
+            "product_id": true,
+            "product_name": true,
+            "store_id": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "PRACTICS_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID": true,
+            "PRACTICS_CATEGORY_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID": true,
+            "PRACTICS_STORE_ID_STORE_STORE_ID": true,
+            "PRACTICS_CATEGORY_ID_PRODUCT_ID_STORE_ID": true
+        }
+    },
+    "practics_new": {
+        "column": {
+            "entity_id": true,
+            "category_id": true,
+            "category_name": true,
+            "product_id": true,
+            "product_name": true,
+            "store_id": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "PRACTICS_NEW_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID": true,
+            "PRACTICS_NEW_CATEGORY_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID": true,
+            "PRACTICS_NEW_STORE_ID_STORE_STORE_ID": true,
+            "PRACTICS_NEW_CATEGORY_ID_PRODUCT_ID_STORE_ID": true
+        }
+    }
+}

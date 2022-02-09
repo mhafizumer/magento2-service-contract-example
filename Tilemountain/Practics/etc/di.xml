@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Tilemountain\Practics\Api\InventoryRepositoryInterface" type="Tilemountain\Practics\Model\InventoryRepository" />
+    <preference for="Tilemountain\Practics\Api\Data\InventoryInterface" type="Tilemountain\Practics\Model\Inventory" />
+    <preference for="Tilemountain\Practics\Api\Data\InventorySearchResultsInterface" type="Tilemountain\Practics\Model\InventorySearchResults" />
+</config>
