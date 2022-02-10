@@ -2,8 +2,6 @@
 
 namespace Tilemountain\Practics\Api\Data;
 
-use Magento\Tests\NamingConvention\true\string;
-
 interface InventoryInterface
 {
     /**

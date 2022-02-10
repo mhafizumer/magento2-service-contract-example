@@ -11,54 +11,88 @@ class Inventory extends \Magento\Framework\Model\AbstractModel implements
     {
         $this->_init('Tilemountain\Practics\Model\ResourceModel\Inventory');
     }
-
+    /**
+     * @return int
+     */
     public function getProductId()
     {
-        // TODO: Implement getProductId() method.
+      return $this->getData('product_id');
     }
 
+    /**
+     * @param $id
+     * @return Inventory|void
+     */
     public function setProductId($id)
     {
-        // TODO: Implement setProductId() method.
+        $this->setData('product_id',$id);
     }
 
+    /**
+     * @return array|int|mixed|null
+     */
     public function getCategoryId()
     {
-        // TODO: Implement getCategoryId() method.
+        return $this->getData('category_id');
     }
 
+    /**
+     * @param $id
+     * @return Inventory|void
+     */
     public function setCategoryId($id)
     {
-        // TODO: Implement setCategoryId() method.
+        $this->setData('category_id',$id);
     }
 
+    /**
+     * @return array|int|mixed|null
+     */
     public function getStoreId()
     {
-        // TODO: Implement getStoreId() method.
+        return $this->getData('store_id');
     }
 
+    /**
+     * @param $id
+     * @return Inventory|void
+     */
     public function setStoreId($id)
     {
-        // TODO: Implement setStoreId() method.
+        $this->setData('store_id',$id);
     }
 
+    /**
+     * @return array|mixed|string|null
+     */
     public function getProductName()
     {
-        // TODO: Implement getProductName() method.
+        return $this->getData('product_name');
     }
 
+    /**
+     * @param $productName
+     * @return Inventory|void
+     */
     public function setProductName($productName)
     {
-        // TODO: Implement setProductName() method.
+        $this->setData('product_name',$productName);
     }
 
+    /**
+     * @return array|mixed|string|null
+     */
     public function getCategoryName()
     {
-        // TODO: Implement getCategoryName() method.
+        return $this->getData('category_name');
     }
 
+    /**
+     * @param $productName
+     * @return Inventory|void
+     */
     public function setCategoryName($productName)
     {
-        // TODO: Implement setCategoryName() method.
+        $this->setData('category_name',$productName);
     }
 }
